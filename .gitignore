@@ -1,3 +1,10 @@
+
+*.pyc
+ui_*.py
+resources_rc.py
+plugin_upload.py
+*.qm
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -26,7 +33,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
