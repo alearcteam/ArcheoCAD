@@ -37,7 +37,7 @@ PLUGINNAME = archeocad
 
 PY_FILES = archeocad.py archeocaddialog.py __init__.py
 
-EXTRAS = icons/ArcheoIcon.png icons/ArcheoIcon2.png metadata.txt
+EXTRAS = icons/ArcheoIcon.png icons/ArcheoIcon2.png metadata.txt icons/help.svg
 
 UI_FILES = ui/ui_archeocad.py ui/ui_archeocad_Rect.py
 

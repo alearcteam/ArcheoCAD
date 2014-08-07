@@ -131,7 +131,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Traitement multiple</string>
+    <string>Champ de regroupement</string>
    </property>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
@@ -192,7 +192,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Shapefile en sortie</string>
+    <string>Fichier de forme en sortie</string>
    </property>
    <widget class="QWidget" name="horizontalLayoutWidget_3">
     <property name="geometry">

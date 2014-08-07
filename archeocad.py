@@ -94,13 +94,25 @@ class ArcheoCAD:
         self.iface.addPluginToVectorMenu(u"&ArcheoCAD", self.actionRectangle)
         # separator
         self.toolBar.addSeparator()
+        
+        # help
+        self.helpAction = QAction(QIcon(":/plugins/archeocad/icons/help.svg"),
+                                  QCoreApplication.translate(u"ArcheoCAD", "aide"), self.iface.mainWindow())
+        self.helpAction.triggered.connect(self.help)
+        self.iface.addPluginToMenu(u"&ArcheoCAD", self.helpAction)
+        self.iface.addPluginToVectorMenu(u"&ArcheoCAD", self.helpAction)
+        
+    def help(self):
+        QDesktopServices().openUrl(QUrl("https://github.com/narimanInrap/ArcheoCAD.git"))
          
     def unload(self):
         # Remove the plugin menu item and icon
         self.iface.removePluginMenu(u"&ArcheoCAD", self.action)
         self.iface.removePluginMenu(u"&ArcheoCAD", self.actionRectangle)
+        self.iface.removePluginMenu(u"&ArcheoCAD", self.helpAction)
         self.iface.removePluginVectorMenu(u"&ArcheoCAD", self.action)
         self.iface.removePluginVectorMenu(u"&ArcheoCAD", self.actionRectangle)
+        self.iface.removePluginVectorMenu(u"&ArcheoCAD", self.helpAction)
         self.iface.removeToolBarIcon(self.action)
         self.iface.removeToolBarIcon(self.actionRectangle)
         del self.toolBar
