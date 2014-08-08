@@ -10,3 +10,5 @@ Rectangle : using 2 input points as vertices and the width of the rectangle (tri
 Circle : using 2 input points on its circumference.
 
 Ellipse : using 5 input points on its circumference.
+
+Please consult the help file for more details.
