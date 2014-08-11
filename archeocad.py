@@ -103,7 +103,8 @@ class ArcheoCAD:
         self.iface.addPluginToVectorMenu(u"&ArcheoCAD", self.helpAction)
         
     def help(self):
-        QDesktopServices().openUrl(QUrl("https://github.com/narimanInrap/ArcheoCAD.git"))
+        help_file = "file:///{}/help/build/html/index.html".format(os.path.dirname(__file__))  
+        QDesktopServices().openUrl(QUrl(help_file))
          
     def unload(self):
         # Remove the plugin menu item and icon

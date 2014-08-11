@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'archeocad'
+project = u'Archeocad'
 copyright = u'2013, Nariman Hatami - INRAP'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -78,7 +78,7 @@ exclude_patterns = []
 
 # If true, sectionauthor and moduleauthor directives will be shown in the
 # output. They are ignored by default.
-#show_authors = False
+show_authors = True
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -178,7 +178,7 @@ htmlhelp_basename = 'templateclassdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'archeocad.tex', u'archeocad Documentation',
+  ('index', 'archeocad.tex', u'Archeocad Documentation',
    u'Nariman Hatami - INRAP', 'manual'),
 ]
 
@@ -211,6 +211,6 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'templateclass', u'archeocad Documentation',
-     [u'Nariman Hatami - INRAP'], 1)
+    ('index', 'templateclass', u'Archeocad Documentation',
+     [u'Pierre Serafini', u'Sylvain Badey', u'Nariman Hatami - INRAP'], 1)
 ]
