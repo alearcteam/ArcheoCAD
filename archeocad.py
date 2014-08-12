@@ -103,7 +103,10 @@ class ArcheoCAD:
         self.iface.addPluginToVectorMenu(u"&ArcheoCAD", self.helpAction)
         
     def help(self):
-        help_file = "file:///{}/help/build/html/index.html".format(os.path.dirname(__file__))  
+        if QCoreApplication.translate(u"ArcheoCAD", "aide") == "aide":
+            help_file = "file:///{}/help/build/html/fr/index.html".format(os.path.dirname(__file__))
+        else:
+            help_file = "file:///{}/help/build/html/en/index.html".format(os.path.dirname(__file__)) 
         QDesktopServices().openUrl(QUrl(help_file))
          
     def unload(self):

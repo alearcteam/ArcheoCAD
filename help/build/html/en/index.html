@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ArcheoCAD &mdash; Archeocad 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Archeocad 0.1 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="#">Archeocad 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="archeocad">
+<h1>ArcheoCAD<a class="headerlink" href="#archeocad" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="presentation">
+<span id="index-0"></span><h1>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h1>
+<p>ArcheoCAD is a QGIS plugin that allows creating Polygons, Rectangles, Circles and Ellipses using a layer of points.
+In order to do this, the Attribute table of the input layer must have a field containing the desired geometry output.
+The values of this attribute, depending on the output geometry, must be chosen from the list below (case-insensitive)</p>
+<ul class="simple">
+<li>Ellipse : e, ellipse, elps, o, oval, ovale</li>
+<li>Cercle : c, circle, cercle,  crlc</li>
+<li>Rectangle : r, rectangle, rect</li>
+<li>Polygone : p, polygon, polygone, pg, polyg</li>
+</ul>
+<p>There are a few conditions to meet concerning input points during field survey:</p>
+<ul class="simple">
+<li>For circles, 2 points on the circumference and a diameter of the circle;</li>
+<li>For ellipses, 5 points on the circumference (preferably not too close to each other) ;</li>
+<li>For rectangles, 2 points representing the length of the trench.</li>
+</ul>
+<p>For general polygons, the topographical points which represent vertices must follow one after another on the perimeter (as if we were drawing the polygon on a paper sheet with a pen). If these points were not taken in the correct order, you can add a “sort field” to the attribute table containing a sort order for the output polygons.</p>
+<a class="reference internal image-reference" href="_images/table1.png"><img alt="_images/table1.png" class="align-center" src="_images/table1.png" style="width: 650pt; height: 434pt;" /></a>
+</div>
+<div class="section" id="description-of-dialog-boxes">
+<span id="index-1"></span><h1>Description of dialog boxes<a class="headerlink" href="#description-of-dialog-boxes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="poly-circle-ellipse-dialog-box">
+<h2>« Poly-circle-Ellipse » Dialog box<a class="headerlink" href="#poly-circle-ellipse-dialog-box" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/CercleEllipsePoly.png" id="index-2"><img alt="_images/CercleEllipsePoly.png" id="index-2" src="_images/CercleEllipsePoly.png" style="width: 40pt; height: 40pt;" /></a>
+<img alt="_images/table2.png" src="_images/table2.png" />
+<img alt="_images/PosterA3.png" src="_images/PosterA3.png" />
+</div>
+<div class="section" id="rectangle-dialog-box">
+<h2>« Rectangle » Dialog box<a class="headerlink" href="#rectangle-dialog-box" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/Rectangle.png" id="index-3"><img alt="_images/Rectangle.png" id="index-3" src="_images/Rectangle.png" style="width: 40pt; height: 40pt;" /></a>
+<img alt="_images/table3.png" src="_images/table3.png" />
+<p id="index-4">The source code is available at:</p>
+<p><a class="reference external" href="https://github.com/narimanInrap/ArcheoCAD.git">https://github.com/narimanInrap/ArcheoCAD.git</a></p>
+<hr class="docutils" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ArcheoCAD</a></li>
+<li><a class="reference internal" href="#presentation">Presentation</a></li>
+<li><a class="reference internal" href="#description-of-dialog-boxes">Description of dialog boxes</a><ul>
+<li><a class="reference internal" href="#poly-circle-ellipse-dialog-box">« Poly-circle-Ellipse » Dialog box</a></li>
+<li><a class="reference internal" href="#rectangle-dialog-box">« Rectangle » Dialog box</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="#">Archeocad 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Nariman Hatami - INRAP.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
