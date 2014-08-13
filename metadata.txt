@@ -27,7 +27,7 @@ email=nariman.hatami@inrap.fr
 tags=polygon, circle, ellipse, rectangle, archaeology, topography, vector
 
 homepage=https://github.com/narimanInrap/ArcheoCAD/blob/master/README.md
-tracker=
+tracker=https://github.com/narimanInrap/ArcheoCAD/issues
 repository=https://github.com/narimanInrap/ArcheoCAD
 icon=icons/ArcheoIcon.png
 # experimental flag
