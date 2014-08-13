@@ -77,25 +77,25 @@ class ArcheoCADDialog(ArcheoCadSuperDialog, Ui_ArcheoCAD):
         
         layer = self.selectedLayer()
         if layer is None:
-            msg = QtGui.QApplication.translate("Dialog", "Veuillez sélectionner une couche vectorielle.", None, QtGui.QApplication.UnicodeUTF8)       
+            msg = QtGui.QApplication.translate("Dialog", "Please specify an input layer.", None, QtGui.QApplication.UnicodeUTF8)       
             QMessageBox.warning(self, 'ArcheoCAD', msg)
             return False
         provider = layer.dataProvider()      
         if (provider.featureCount() < 2):
-            msg = QtGui.QApplication.translate("Dialog","Polygone : Veuillez sélectionner une couche contenant au moins 2 points.", None, QtGui.QApplication.UnicodeUTF8)
+            msg = QtGui.QApplication.translate("Dialog","Polygon: Please select an input layer with at least 2 points.", None, QtGui.QApplication.UnicodeUTF8)
             QMessageBox.warning(self, 'ArcheoCAD', msg)
             return False
         if self.chkBoxFieldGroup.isChecked() and self.groupAttrName() == '':
-            msg = QtGui.QApplication.translate("Dialog","Veuillez sélectionner un attribut de groupement.", None, QtGui.QApplication.UnicodeUTF8)
+            msg = QtGui.QApplication.translate("Dialog","Please specify an input field for the gathering of the points.", None, QtGui.QApplication.UnicodeUTF8)
             QMessageBox.warning(self, 'ArcheoCAD', msg)
             return False
         if self.chkBoxSort.isChecked() and self.sortAttrName() == '':
-            msg = QtGui.QApplication.translate("Dialog","Veuillez sélectionner un attribut pour le tri des sommets des polygones.", None, QtGui.QApplication.UnicodeUTF8)
+            msg = QtGui.QApplication.translate("Dialog","Please specify an input field to define the sort order for the vertices of polygons.", None, QtGui.QApplication.UnicodeUTF8)
             QMessageBox.warning(self, 'ArcheoCAD', msg)
             return False
         extension = os.path.splitext(self.getOutputFilePath())[1][1:]
         if self.getOutputFilePath() == '' or extension != 'shp': 
-            msg = QtGui.QApplication.translate("Dialog","Veuillez spécifier un fichier shapefile de sortie.", None, QtGui.QApplication.UnicodeUTF8)
+            msg = QtGui.QApplication.translate("Dialog","Please specify an output shapefile.", None, QtGui.QApplication.UnicodeUTF8)
             QMessageBox.warning(self, 'ArcheoCAD', msg)
             return False
         return True

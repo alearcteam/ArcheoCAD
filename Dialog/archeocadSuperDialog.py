@@ -126,9 +126,9 @@ class ArcheoCadSuperDialog(QDialog):
         if logMsg:
             warningBox = QMessageBox(self)
             warningBox.setWindowTitle('ArcheOCAD')
-            message = QtGui.QApplication.translate("SDialog","le fichier shapefile de sortie a été créé.", None, QtGui.QApplication.UnicodeUTF8)
+            message = QtGui.QApplication.translate("SDialog","Output Shapefile created.", None, QtGui.QApplication.UnicodeUTF8)
             warningBox.setText(message)
-            message = QtGui.QApplication.translate("SDialog","Des problèmes ont été rencontrés, certaines formes n'ont peut-être pas pu être créées.", None, QtGui.QApplication.UnicodeUTF8)
+            message = QtGui.QApplication.translate("SDialog","There were some issues, maybe some features could not be created.", None, QtGui.QApplication.UnicodeUTF8)
             warningBox.setInformativeText(message)
             warningBox.setDetailedText(logMsg)
             warningBox.setIcon(QMessageBox.Warning)
@@ -138,10 +138,10 @@ class ArcheoCadSuperDialog(QDialog):
     # Copyright (C) 2010 Pavol Kapusta
     # Copyright (C) 2010, 2013 Goyo
     def addShapeToCanvas(self):
-        message = unicode(QtGui.QApplication.translate("SDialog","Fichier shapefile de sortie créé:", None, QtGui.QApplication.UnicodeUTF8))
+        message = unicode(QtGui.QApplication.translate("SDialog","Created output shapefile:", None, QtGui.QApplication.UnicodeUTF8))
         message = '\n'.join([message, unicode(self.getOutputFilePath())])
         message = '\n'.join([message,
-            unicode(QtGui.QApplication.translate("SDialog","Voulez-vous ajouter la nouvelle couche à votre projet?", None, QtGui.QApplication.UnicodeUTF8))])
+            unicode(QtGui.QApplication.translate("SDialog","Would you like to add the new layer to your project?", None, QtGui.QApplication.UnicodeUTF8))])
         addToTOC = QMessageBox.question(self, "ArcheoCAD", message,
             QMessageBox.Yes, QMessageBox.No, QMessageBox.NoButton)
         if addToTOC == QMessageBox.Yes:

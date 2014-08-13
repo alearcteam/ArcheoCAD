@@ -71,7 +71,7 @@ class ArcheoCAD:
         # Create action that will start plugin configuration
         self.action = QAction(
             QIcon(":/plugins/archeocad/icons/ArcheoIcon.png"),
-            QCoreApplication.translate(u"ArcheoCAD", "Poly-Cercle-Ellipse"), self.iface.mainWindow())        
+            QCoreApplication.translate(u"ArcheoCAD", "Poly-Circle-Ellipse"), self.iface.mainWindow())        
      
         # connect the action to the run method
         self.action.triggered.connect(self.run)
@@ -97,13 +97,13 @@ class ArcheoCAD:
         
         # help
         self.helpAction = QAction(QIcon(":/plugins/archeocad/icons/help.svg"),
-                                  QCoreApplication.translate(u"ArcheoCAD", "aide"), self.iface.mainWindow())
+                                  QCoreApplication.translate(u"ArcheoCAD", "help"), self.iface.mainWindow())
         self.helpAction.triggered.connect(self.help)
         self.iface.addPluginToMenu(u"&ArcheoCAD", self.helpAction)
         self.iface.addPluginToVectorMenu(u"&ArcheoCAD", self.helpAction)
         
     def help(self):
-        if QCoreApplication.translate(u"ArcheoCAD", "aide") == "aide":
+        if QCoreApplication.translate(u"ArcheoCAD", "help") == "aide":
             help_file = "file:///{}/help/build/html/fr/index.html".format(os.path.dirname(__file__))
         else:
             help_file = "file:///{}/help/build/html/en/index.html".format(os.path.dirname(__file__)) 

@@ -29,7 +29,10 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>ArcheoCAD - Poly-Cercle-Ellipse</string>
+   <string>ArcheoCAD - Poly-Circle-Ellipse</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
   </property>
   <property name="sizeGripEnabled">
    <bool>false</bool>
@@ -60,7 +63,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Couche de points</string>
+    <string>Input point layer</string>
    </property>
    <widget class="QComboBox" name="comboPointLayer">
     <property name="geometry">
@@ -85,7 +88,7 @@
      <item>
       <widget class="QCheckBox" name="chkBoxSelected">
        <property name="text">
-        <string>Traiter les entités sélectionnées</string>
+        <string>Create output features using only selected points</string>
        </property>
       </widget>
      </item>
@@ -104,14 +107,14 @@
      <item>
       <widget class="QLabel" name="TxtLabel_geoChoice">
        <property name="text">
-        <string>Champ contenant la géométrie voulue en sortie</string>
+        <string>Input field containing the output geometry</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="TxtLable_geoChoice2">
        <property name="text">
-        <string>(polygone, cercle, ellipse)</string>
+        <string>(polygon, circle, ellipse)</string>
        </property>
       </widget>
      </item>
@@ -131,7 +134,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Champ de regroupement</string>
+    <string>Regrouping field</string>
    </property>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
@@ -146,7 +149,7 @@
      <item>
       <widget class="QCheckBox" name="chkBoxFieldGroup">
        <property name="text">
-        <string>regrouper les points selon un champ</string>
+        <string>Regrouping points based on a specific field</string>
        </property>
       </widget>
      </item>
@@ -168,7 +171,7 @@
         <enum>Qt::LeftToRight</enum>
        </property>
        <property name="text">
-        <string>Champ contenant l'identification de regroupement</string>
+        <string>Input field to be used to regroup points </string>
        </property>
       </widget>
      </item>
@@ -192,7 +195,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Fichier de forme en sortie</string>
+    <string>Output shapefile</string>
    </property>
    <widget class="QWidget" name="horizontalLayoutWidget_3">
     <property name="geometry">
@@ -207,7 +210,7 @@
      <item>
       <widget class="QLabel" name="label_VertexNb">
        <property name="text">
-        <string>Nombre de sommets (cercle, ellipse)</string>
+        <string>Number of vertices (used for circles and ellipses)</string>
        </property>
       </widget>
      </item>
@@ -246,12 +249,19 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
-      <widget class="QLineEdit" name="outFileLine"/>
+      <widget class="QLineEdit" name="outFileLine">
+       <property name="locale">
+        <locale language="English" country="UnitedStates"/>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="ButtonBrowse">
+       <property name="locale">
+        <locale language="English" country="UnitedStates"/>
+       </property>
        <property name="text">
-        <string>parcourir</string>
+        <string>browse</string>
        </property>
       </widget>
      </item>
@@ -270,12 +280,16 @@
      <item>
       <widget class="QLabel" name="label_enconding">
        <property name="text">
-        <string>Codage des caractères</string>
+        <string>Character encoding</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="comboEncoding"/>
+      <widget class="QComboBox" name="comboEncoding">
+       <property name="locale">
+        <locale language="English" country="UnitedStates"/>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -315,7 +329,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Tri des sommets des polygones</string>
+    <string>Sort polygon vertices</string>
    </property>
    <widget class="QWidget" name="horizontalLayoutWidget_6">
     <property name="geometry">
@@ -330,7 +344,7 @@
      <item>
       <widget class="QCheckBox" name="chkBoxSort">
        <property name="text">
-        <string>trier les points selon un champ</string>
+        <string>Sort vertices based on a specific field</string>
        </property>
       </widget>
      </item>
@@ -352,7 +366,7 @@
         <enum>Qt::LeftToRight</enum>
        </property>
        <property name="text">
-        <string>Champ contenant l'ordre du tri</string>
+        <string>Input field to be used for the sort order</string>
        </property>
       </widget>
      </item>

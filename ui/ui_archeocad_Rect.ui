@@ -31,6 +31,9 @@
   <property name="windowTitle">
    <string>ArcheoCAD Rectangle</string>
   </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
@@ -63,7 +66,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Couche de points</string>
+    <string>Input point layer</string>
    </property>
    <widget class="QComboBox" name="comboPointLayer">
     <property name="geometry">
@@ -88,7 +91,7 @@
      <item>
       <widget class="QCheckBox" name="chkBoxSelected">
        <property name="text">
-        <string>Traiter les entités sélectionnées</string>
+        <string>Create output features using only selected points</string>
        </property>
       </widget>
      </item>
@@ -107,7 +110,7 @@
      <item>
       <widget class="QLabel" name="TxtLabel_geoChoice">
        <property name="text">
-        <string>Champ contenant la géométrie voulue en sortie</string>
+        <string>Input field containing the output geometry</string>
        </property>
       </widget>
      </item>
@@ -134,7 +137,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Champ de regroupement</string>
+    <string>Regrouping field</string>
    </property>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
@@ -149,7 +152,7 @@
      <item>
       <widget class="QCheckBox" name="chkBoxFieldGroup">
        <property name="text">
-        <string>regrouper les points selon un champ</string>
+        <string>Regrouping points based on a specific field</string>
        </property>
       </widget>
      </item>
@@ -171,7 +174,7 @@
         <enum>Qt::LeftToRight</enum>
        </property>
        <property name="text">
-        <string>Champ contenant l'identification de regroupement</string>
+        <string>Input field to be used to regroup points </string>
        </property>
       </widget>
      </item>
@@ -195,7 +198,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Fichier de forme en sortie</string>
+    <string>Regrouping field</string>
    </property>
    <widget class="QWidget" name="horizontalLayoutWidget_4">
     <property name="geometry">
@@ -213,7 +216,7 @@
      <item>
       <widget class="QPushButton" name="ButtonBrowse">
        <property name="text">
-        <string>parcourir</string>
+        <string>browse</string>
        </property>
       </widget>
      </item>
@@ -232,7 +235,7 @@
      <item>
       <widget class="QLabel" name="label_enconding">
        <property name="text">
-        <string>Codage des caractères</string>
+        <string>Character encoding</string>
        </property>
       </widget>
      </item>
@@ -292,7 +295,7 @@
      <item>
       <widget class="QLabel" name="label_Width">
        <property name="text">
-        <string>Largeur (en unité de la carte)</string>
+        <string>Width (map's unit)</string>
        </property>
       </widget>
      </item>
@@ -334,7 +337,7 @@
      <item>
       <widget class="QLabel" name="label_orientation">
        <property name="text">
-        <string>Position relative de la largeur du rectangle :</string>
+        <string>Direction choice for creating the rectangle :</string>
        </property>
       </widget>
      </item>
@@ -343,7 +346,7 @@
        <item>
         <widget class="QRadioButton" name="radioButtonLeft">
          <property name="text">
-          <string>à gauche</string>
+          <string>left</string>
          </property>
          <property name="checked">
           <bool>false</bool>
@@ -353,7 +356,7 @@
        <item>
         <widget class="QRadioButton" name="radioButtonRight">
          <property name="text">
-          <string>à droite</string>
+          <string>right</string>
          </property>
          <property name="checked">
           <bool>true</bool>

@@ -33,7 +33,7 @@ class FileDeletionError(Exception):
         self.message = self.__str__()
         
     def __str__(self):
-        msg = QtGui.QApplication.translate("Messages","Erreur lors de la suppression du fichier shapefile {0}", None, QtGui.QApplication.UnicodeUTF8)
+        msg = QtGui.QApplication.translate("Exceptions","Error deleting Shapefile {}.", None, QtGui.QApplication.UnicodeUTF8)
         return msg.format(repr(self.fileName))
             
 class UnknownAttributeError(Exception):
@@ -45,7 +45,7 @@ class UnknownAttributeError(Exception):
         self.message = self.__str__()
         
     def __str__(self):
-        msg = QtGui.QApplication.translate("Exceptions", "L'attribut {0} n'existe pas sur la couche {1} ou la table d'attribut pas associée.", None, QtGui.QApplication.UnicodeUTF8) 
+        msg = QtGui.QApplication.translate("Exceptions", "The attribute {0} does not exist on layer {1}  or field map not associated.", None, QtGui.QApplication.UnicodeUTF8) 
         return msg.format(repr(self.fieldName), repr(self.layerName))
         
 class NoFeatureCreatedError(Exception):
@@ -56,5 +56,5 @@ class NoFeatureCreatedError(Exception):
         self.message = self.__str__()
     
     def __str__(self):
-        msg = QtGui.QApplication.translate("Exceptions", "Aucune frome n'a été créée. Tentative de suppression du fichier shapefile.{}\n.", None, QtGui.QApplication.UnicodeUTF8)
+        msg = QtGui.QApplication.translate("Exceptions", "No feature was created. The shapefile was deleted {}.\n", None, QtGui.QApplication.UnicodeUTF8)
         return msg.format(self.filename)

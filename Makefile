@@ -29,7 +29,7 @@ SOURCES = archeocad.py __init__.py ui/ui_archeocad.py ui/ui_archeocad_Rect.py Di
 
 CODECFORTR = UTF-8
 
-TRANSLATIONS = i18n/archeocad_en.ts i18n/archeocad_it.ts
+TRANSLATIONS = i18n/archeocad_fr.ts i18n/archeocad_it.ts
 
 # global
 

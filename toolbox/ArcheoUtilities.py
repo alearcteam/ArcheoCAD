@@ -69,7 +69,7 @@ class Utilities(object):
         key = '/UI/lastShapefileDir'
         outDir = settings.value(key)
         filter = 'Shapefiles (*.shp)'
-        SaveOutPutShapeMsg = QtGui.QApplication.translate("Utility","Sauvegarde le fichier shapefile de sortie", None, QtGui.QApplication.UnicodeUTF8) 
+        SaveOutPutShapeMsg = QtGui.QApplication.translate("Utility","Save output shapefile", None, QtGui.QApplication.UnicodeUTF8) 
         outFilePath = QtGui.QFileDialog.getSaveFileName(parent, SaveOutPutShapeMsg, outDir, filter)
         outFilePath = unicode(outFilePath)
         if outFilePath:

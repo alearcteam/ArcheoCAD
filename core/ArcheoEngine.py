@@ -77,7 +77,7 @@ class Engine(object):
         if self.FeatureCounter == 0:
             del writer    
             if not QgsVectorFileWriter.deleteShapeFile(self.fileName):
-                msg = QtGui.QApplication.translate("Engine","Aucune frome n'a été créée. Tentative de suppression du fichier shapefile {}.\n", None, QtGui.QApplication.UnicodeUTF8)
+                msg = QtGui.QApplication.translate("Engine","No feature was created. The {} shapefile was deleted.\n", None, QtGui.QApplication.UnicodeUTF8)
                 raise FileDeletionError(msg + self.fileName)
             raise NoFeatureCreatedError(self.fileName)
         del writer
@@ -114,7 +114,7 @@ class Engine(object):
                     elif GeoEnum.determineGeom(geom) in [GeoEnum.Poly, GeoEnum.Cercle, GeoEnum.Ellipse]:
                         continue
                     else:
-                        msg = QtGui.QApplication.translate("Engine","Le groupe de points correspondant contient une géométrie de sortie non valide: {}", None, QtGui.QApplication.UnicodeUTF8)
+                        msg = QtGui.QApplication.translate("Engine","At least one group of point contains an invalid output geometry: {}", None, QtGui.QApplication.UnicodeUTF8)
                         raise ValueError(msg.format(geom))
                 else:
                     if GeoEnum.determineGeom(geom) == GeoEnum.Rect:
@@ -123,10 +123,10 @@ class Engine(object):
                         feature = self.CreateMethodDict[GeoEnum.determineGeom(geom)](pointList, attributes)
                      
             except ValueError as e:
-                msg = QtGui.QApplication.translate("Engine","clé: {0}-valeur: {1}\n", None, QtGui.QApplication.UnicodeUTF8)                
+                msg = QtGui.QApplication.translate("Engine","key: {0}-value: {1}\n", None, QtGui.QApplication.UnicodeUTF8)                
                 self.logWarning(msg.format(key, e.message))
             except KeyError as e:
-                msg = QtGui.QApplication.translate("Engine","Le groupe de points correspondant contient une géométrie de sortie non valide: {}", None, QtGui.QApplication.UnicodeUTF8)
+                msg = QtGui.QApplication.translate("Engine","At least one group of point contains an invalid output geometry: {}", None, QtGui.QApplication.UnicodeUTF8)
                 self.logWarning(msg.format(geom))           
             else:
                 yield feature
@@ -185,7 +185,7 @@ class Engine(object):
         returned feature is a polygon (WKBPolygon)."""
         
         if len(pointList) < 3:
-            msg = QtGui.QApplication.translate("Engine","Ne peut créer un polygone avec {0} points.", None, QtGui.QApplication.UnicodeUTF8) 
+            msg = QtGui.QApplication.translate("Engine","Can not create a polygon out of {} points.", None, QtGui.QApplication.UnicodeUTF8) 
             raise ValueError(msg.format(len(pointList)))             
         geom = QgsGeometry.fromPolygon([pointList])               
         feature = QgsFeature()                     
@@ -196,7 +196,7 @@ class Engine(object):
     def createCircle(self, pointList, attributes):
         
         if len(pointList) != 2 :
-            msg = QtGui.QApplication.translate("Engine","Ne peut créer de cercle avec {0} point(s).", None, QtGui.QApplication.UnicodeUTF8) 
+            msg = QtGui.QApplication.translate("Engine","Can not create a circle out of {} point(s).", None, QtGui.QApplication.UnicodeUTF8) 
             raise ValueError(msg.format(len(pointList)))        
         circlePoints = []        
         # Digitize the circle using its parametric equation
@@ -223,10 +223,10 @@ class Engine(object):
     # Copyright (c) 2012 Stuart Pernsteiner
     def createEllipse(self, pointList, attributes):
         if len(pointList) < 5 :
-            msg = QtGui.QApplication.translate("Engine","Ne peut créer d'ellipse avec moins de 5 points.", None, QtGui.QApplication.UnicodeUTF8) 
+            msg = QtGui.QApplication.translate("Engine","To create an Ellipse 5 points are needed.", None, QtGui.QApplication.UnicodeUTF8) 
             raise ValueError(msg)
         if len(pointList) > 5 : # in this case only the first 5 points are used
-            msg = QtGui.QApplication.translate("Engine","Il y a trop de points pour la création d'une ellipse ({}). 5 points ont été uniquement pris en compte pour la création de cette ellipse.", None, QtGui.QApplication.UnicodeUTF8) 
+            msg = QtGui.QApplication.translate("Engine","There were too many points ({}), only 5  of them were used to create the ellipse.", None, QtGui.QApplication.UnicodeUTF8) 
             self.logWarning(msg)
         # this translation is for avoiding floating point precision issues
         baryC = MathTools.barycenter(pointList)
@@ -239,7 +239,7 @@ class Engine(object):
         [a, b, c, d, e, f] = conic
         # conditions for the existence of an ellipse 
         if MathTools.bareissDeterminant([[a, b/2, d/2], [b/2, c, e/2], [d/2, e/2, f]]) == 0 or a*c - b*b/4 <= 0:
-            msg = QtGui.QApplication.translate("Engine","L'ellipse passant par ces 5 points n'a pu être déterminée.", None, QtGui.QApplication.UnicodeUTF8) 
+            msg = QtGui.QApplication.translate("Engine","Could not find the ellipse passing by these five points.", None, QtGui.QApplication.UnicodeUTF8) 
             raise ValueError(msg)     
         cX = (b*e - 2*c*d) / (4*a*c - b*b)
         cY = (d*b - 2*a*e) / (4*a*c - b*b)
@@ -280,7 +280,7 @@ class Engine(object):
     def createRectangle(self, pointList, attributes):
         
         if len(pointList) != 2 :
-            msg =  QtGui.QApplication.translate("Engine","Il faut exactement 2 points pour la création du rectangle", None, QtGui.QApplication.UnicodeUTF8)
+            msg =  QtGui.QApplication.translate("Engine","Exactly 2 points are needed to create a rectangle.", None, QtGui.QApplication.UnicodeUTF8)
             raise ValueError(msg)
         rectanglePoints = []        
         p1 = pointList[1]
@@ -432,7 +432,7 @@ class MathTools(object):
     def solveQuadratic(a, b, c):
         
         if (b*b - 4*a*c) < 0:
-            msg = QtGui.QApplication.translate("Engine","L'ellipse passant par ces 5 points n'a pu être déterminée.", None, QtGui.QApplication.UnicodeUTF8) 
+            msg = QtGui.QApplication.translate("Engine","Could not find the ellipse passing by these five points.", None, QtGui.QApplication.UnicodeUTF8) 
             raise ValueError(msg)
         discRoot = math.sqrt(b*b - 4*a*c)
         x1 = (-b + discRoot) / (2*a)
