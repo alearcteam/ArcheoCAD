@@ -12,7 +12,7 @@
 name=ArcheoCAD
 qgisMinimumVersion=2.0
 description=Generates a vectorial layer of Polygons, Rectangles, Circles and Ellipses using vertices.
-version=0.1
+version=0.1.1
 author=Nariman Hatami - INRAP
 email=nariman.hatami@inrap.fr
 about=This plugin is developed on the demand of INRAP archaelogists and topographers and it is in particular adapted for archaeological field survey.
